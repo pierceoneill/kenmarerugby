@@ -1,0 +1,1 @@
+web: gunicorn minderfinder.wsgi:application

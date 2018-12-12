@@ -1,0 +1,337 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   <!-- Basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Mobile Metas -->
+   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <!-- Site Metas -->
+   <title>Kenmare Rugby | Home</title>
+   <meta name="keywords" content="kenmare, rugby, kenmare rugby, munster">
+   <meta name="description" content="Kenmare Rugby Football Club">
+   <meta name="author" content="digidude web design & social media">
+    <!-- Site Icons -->
+   <link rel="shortcut icon" href="" type="image/x-icon" />
+   <link rel="apple-touch-icon" href="">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+   <!-- Site CSS -->
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+   <!-- font family -->
+   <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+   <!-- end font family -->
+     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900" rel="stylesheet">
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/flipdown/flipdown.css' %}">
+      
+    <script type="text/javascript" src="{% static 'example/js/flipdown/flipdown.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+  
+   <link rel="stylesheet" href="{% static 'css/3dslider.css' %}" />
+   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+   <script src="{% static 'js/3dslider.js' %}"></script>
+   
+   
+<style>
+    .item .thumb{
+      background-size: cover;
+      width: 750px;
+      height: 375px;
+      float: left;
+      margin-right: 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 5px;
+    }
+    .entry-post .time a {
+    width: 120px;
+    height: 120px;
+    color: #fff;
+    font-size: 12px;    
+    background-color: #f4bf00;
+    line-height: 120px;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-transition: all 900ms;
+    -moz-transition: all 900ms;
+    -ms-transition: all 900ms;
+    -o-transition: all 900ms;
+    transition: all 900ms;
+}    
+
+
+.blog-section .entry-post {
+    margin-bottom: 3px;
+    overflow: hidden;
+}
+
+.entry-thumbnail {
+    z-index: -1;
+    overflow: hidden;
+}
+
+
+
+.entry-post .time .date {
+    margin-top: 20px;
+    z-index: 1;
+    color: #ffffff;
+}
+
+
+
+.blog-section .entry-post:hover .time a {
+    border-radius: 0%;
+}
+
+.post-content .time.time1 a {
+    background-color: #f26522;
+}
+
+.post-content .time.time2 a {
+    background-color: #ed1c24;
+}
+
+.post-content .time.time3 a {
+    background-color: #b90162;
+}
+
+.post-content .time.time4 a {
+    background-color: #873e95;
+}
+
+.post-content .time.time5 a {
+    background-color: #87c05e;
+}
+
+.entry-post .time .date span {
+    display: block;
+    line-height: 0;
+    margin-top: -2px;
+    color: #ffffff;
+}
+
+.post-content {
+    border: 1px solid #f0f0f0;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 30px;
+    font-size: 4px;
+    color: #ffffff;
+}
+
+.post-content h2 {
+    line-height: 21px;
+}
+
+.post-content h2 a  {
+    font-size: 20px;
+    color: #2d3038;
+    display: block;
+}
+
+.post-content h2 a:hover {
+    color: #87c05e;
+}
+    
+.entry-post .time {
+    margin-top: -45px;
+    z-index: 1;
+}
+    .more{margin-top:20px;}
+    
+    .example {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 510px;
+  height: 200px;;
+  margin: auto;
+}
+
+.example .flipdown {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.example h1 {
+  text-align: center;
+  font-weight: 100;
+  font-size: 3em;
+  margin-top: 0;
+}
+
+  </style>
+   </head>
+
+         <header>
+            <div class="container">
+               <div class="header-top">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="full">
+                           <div class="logo">
+                              <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="#" /></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="right_top_section">
+                           <!-- social icon -->
+                           <ul class="social-icons pull-left">
+                              <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+                              <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                              <li><a class="youtube" href="#"><i class="fab fa-youtube"></i></a></li>
+                              <li><a class="instagram" href="#"><i class="fab fa-instagram"></i></a></li>
+                           </ul>
+                           <!-- end social icon -->
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header-bottom">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="full">
+                           <div class="main-menu-section">
+                              <div class="menu">
+                                 <nav class="navbar navbar-inverse">
+                                    <div class="navbar-header">
+                                       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                                       <span class="sr-only">Toggle navigation</span>
+                                       <span class="icon-bar"></span>
+                                       <span class="icon-bar"></span>
+                                       <span class="icon-bar"></span>
+                                       </button>
+                                       <a class="navbar-brand" href="#">Menu</a>
+                                    </div>
+                                    <div class="collapse navbar-collapse js-navbar-collapse">
+                                       <ul class="nav navbar-nav">
+                                          <li class="active"><a href="index.html">Home</a></li>
+                                          <li><a href="team.html">Teams</a></li>
+                                          <li><a href="blog.html">Blog</a></li>
+                                          <li><a href="about.html">About</a></li>
+                                          <li><a href="contact.html">Contact</a></li>
+                                       </ul>
+                                    </div>
+                                    <!-- /.nav-collapse -->
+                                 </nav>
+                                 <div class="search-bar">
+                                    <div id="imaginary_container">
+                                       <div class="input-group stylish-input-group">
+                                          <input type="text" class="form-control"  placeholder="Search" >
+                                          <span class="input-group-addon">
+                                          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>  
+                                          </span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>
+ {% if messages %}
+        <div class="alert alert-success">
+            <div class="messages">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+     
+        {% block content %} {% endblock %}
+
+<footer id="footer" class="footer">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="full">
+                     <div class="footer-widget">
+                        <div class="footer-logo">
+                           <a href="#"><img src="images/logo.png" alt="#" /></a>
+                        </div>
+                        <p>Kenmare Rugby est. 1st March 2009. Currently competing at U6s, U8s, U10s & U12s Mini Rugby. New members always welcome..</p>
+                        <ul class="social-icons style-4 pull-left">
+                           <li><a class="facebook" href="https://www.facebook.com/Kenmarerugby/"><i class="fab fa-facebook"></i></a></li>
+                           <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                           <li><a class="youtube" href="#"><i class="fab fa-youtube"></i></a></li>
+                           <li><a class="pinterest" href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-2">
+                  <div class="full">
+                     <div class="footer-widget">
+                        <h3>Menu</h3>
+                        <ul class="footer-menu">
+                           <li><a href="about.html">About Us</a></li>
+                           <li><a href="team.html">Our Team</a></li>
+                           <li><a href="news.html">Latest News</a></li>
+                           <li><a href="matche.html">Recent Matchs</a></li>
+                           <li><a href="blog.html">Our Blog</a></li>
+                           <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="full">
+                     <div class="footer-widget">
+                        <h3>Contact us</h3>
+                        <ul class="address-list">
+                           <li><i class="fas fa-map-marked-alt"></i></i> Railway Road, Kenmare, Co. Kerry</li>
+                           <li><i class="fa fa-phone"></i> 083 365 4625</li>
+                           <li><i style="font-size:20px;top:5px;" class="fa fa-envelope"></i> info@kenmarerugby.ie</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="full">
+                     <div class="contact-footer">
+                     <iframe width="100%" height="350" src="https://maps.google.com/maps?width=100%&amp;height=350&amp;hl=en&amp;coord=51.88410,-9.58284&amp;q=Railway%20Road%2C%20Kenmare%2C%20Co.%20Kerry+(Kenmare%20Rugby%20Football%20Club)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Google map generator</a></iframe>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="footer-bottom">
+            <div class="container">
+               <p>Copyright © 2018 Built by <a href="https://digidude.ie" target="_blank">digidude web design & social media</a></p>
+            </div>
+         </div>
+      </footer>
+      <a href="#home" data-scroll class="dmtop global-radius"><i class="fas fa-angle-up"></i></a>
+      <!-- ALL JS FILES -->
+
+      <script src="{% static 'js/all.js' %}"></script>
+      
+      <!-- ALL PLUGINS -->
+      <script src="{% static 'js/custom.js' %}"></script>
+      <script src="{% static 'vue.min.js' %}"></script>
+<script src="{% static 'vue-resource.min.js' %}"></script>
+<script src="{% static 'script.js' %}"></script>
+      
+      
+   </body>
+</html>

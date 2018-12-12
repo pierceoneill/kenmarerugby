@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+{% load static %}
+{% block content %}
+ 
+<section class="container">
+    <div class="page-header">
+        <h1>Parents / Guardian Login</h1><br>
+          
+    </div>
+</section>
+
+<section class="container text-center">
+    <img src="{% static 'images/logo.png' %}" alt="">
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="form-group">
+                <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
+                    <fieldset class="form-group">
+                        <legend>Login</legend>
+                            {% csrf_token %}
+                            {{ form | as_bootstrap }}
+            
+             
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </fieldset>
+                </form>
+           </div>
+        </div>
+    </div>
+</section>
+
+<section>
+<div class="separator">
+                    <h1 class="text-center"><span class="blue">Want to book a </span> <span class="pink">sitter?</span></h1>
+                    <p class="text-center"><a href="{% url 'register' %}">Create Account</a></p>
+                    <p class="text-center"><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+</div>
+</section>
+{% endblock %}
