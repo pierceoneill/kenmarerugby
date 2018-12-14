@@ -27,7 +27,7 @@ SECRET_KEY = 'dz@p3r%aup3)qiiuo$+&b%!wv!)8ld0a4(4)#rs_p!!dhfg)z0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME')]
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), 'kenmarerugby.herokuapp.com']
 
 
 # Application definition
