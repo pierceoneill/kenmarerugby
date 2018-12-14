@@ -29,15 +29,15 @@
    <!-- end font family -->
      <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900" rel="stylesheet">
 <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="{% static 'css/flipdown/flipdown.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/flipdown.css' %}">
       
-    <script type="text/javascript" src="{% static 'example/js/flipdown/flipdown.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
   
    <link rel="stylesheet" href="{% static 'css/3dslider.css' %}" />
    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
    <script src="{% static 'js/3dslider.js' %}"></script>
+   <script src='https://pbutcher.uk/flipdown/js/flipdown/flipdown.js'></script>
    
    
 <style>
@@ -268,7 +268,7 @@
                   <div class="full">
                      <div class="footer-widget">
                         <div class="footer-logo">
-                           <a href="#"><img src="images/logo.png" alt="#" /></a>
+                           <a href="#"><img src="{% static 'images/logo.png' %}" alt="#" /></a>
                         </div>
                         <p>Kenmare Rugby est. 1st March 2009. Currently competing at U6s, U8s, U10s & U12s Mini Rugby. New members always welcome..</p>
                         <ul class="social-icons style-4 pull-left">
@@ -328,9 +328,9 @@
       
       <!-- ALL PLUGINS -->
       <script src="{% static 'js/custom.js' %}"></script>
-      <script src="{% static 'vue.min.js' %}"></script>
-<script src="{% static 'vue-resource.min.js' %}"></script>
-<script src="{% static 'script.js' %}"></script>
+      <script src="{% static 'js/vue.min.js' %}"></script>
+<script src="{% static 'js/vue-resource.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
       
       
    </body>
