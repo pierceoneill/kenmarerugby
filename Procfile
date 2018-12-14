@@ -1,1 +1,1 @@
-web: gunicorn minderfinder.wsgi:application
+web: gunicorn kenmarerugby.wsgi:application
