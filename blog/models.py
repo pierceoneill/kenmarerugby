@@ -17,7 +17,6 @@ class Post(models.Model):
     category = models.CharField(max_length=200)
     description = models.CharField(max_length=340)
     views = models.IntegerField(default=0)
-    tag = models.CharField(max_length=30, blank=True, null=True)
     likes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='post_likes', blank=True)
 
     def publish(self):
