@@ -1143,7 +1143,6 @@ section#contant h4 {
      width: 100%;
      line-height: 24px;
      font-size: 14px;
-     text-align: left;
      font-weight: 300;
 }
  .main-heading p {
@@ -2263,3 +2262,192 @@ blockquote.quote {
 .post-action h3 a:hover {
     color: #87c05e;
 }
+/* ==========
+   Sidebar
+   ========== */
+@media (max-width: 767px) {
+    aside {
+        padding-top: 60px;
+    }
+}
+
+aside h3.widget-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #666666;
+    margin: 0 0 35px;
+    text-align: center;
+}
+
+aside .widget {
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+aside a.big-icon {
+    width: 116px;
+    height: 116px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+
+aside a.color-bg-icon {
+    color: #ffffff;
+    background-color: #323232;
+    margin-bottom: 4px;
+    padding: 20px 12px;
+}
+
+aside a.social-icon {
+    display: inline-block;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+}
+
+aside a.social-icon span {
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+aside a.social-icon span:first-child {
+    font-size: 20px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+aside a.big-icon[class*='soc-']:before {
+    font-size: 32px;
+}
+
+.color-bg-icon.soc-twitter {
+    background-color: #00abef;
+}
+
+.color-bg-icon.soc-facebook {
+    background-color: #507cbe;
+}
+
+.color-bg-icon.soc-google {
+    background-color: #d93e2d;
+}
+
+a.color-bg-icon:hover {
+    background-color: #f5abcb;
+    color: #ffffff !important;
+}
+
+
+aside .widget_mailchimp {
+    text-align: center;
+}
+aside .widget_search [type="text"],
+aside .widget_mailchimp .mailchimp_email {
+    color: rgba(102, 101, 101, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+aside .widget_mailchimp p {
+    color: #666566;
+    margin-bottom: 10px;
+}
+
+aside .widget_mailchimp button {
+    color: #9cc0e5;
+}
+
+aside .widget_tag_cloud .btn-type1 {
+    width: auto;
+    height: 42px;
+    padding: 0 18px;
+    margin: 0 5px 9px 0;
+    line-height: 38px;
+}
+
+aside .widget_categories,
+aside .widget_archive {
+    margin-top: 40px;
+    padding: 35px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.widget_categories .select-group,
+.widget_archive .select-group {
+    position: relative;
+    display: inline-block;
+    max-width: 290px;
+    width: 100%;
+}
+
+.widget_categories select,
+.widget_archive select {
+    padding: 12px 30px;
+    height: 60px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(102, 101, 101, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.widget_categories select:focus,
+.widget_archive select:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.widget_categories select:hover,
+.widget_archive select:hover {
+    cursor: pointer;
+}
+
+.widget_categories .select-group i,
+.widget_archive .select-group i {
+    position: absolute;
+    top: 23px;
+    right: 23px;
+    color: #9cc0e5;
+}
+
+.widget_categories .select-group:hover i,
+.widget_archive .select-group:hover i {
+    color: #666566;
+}
+
+.widget_recent_posts img {
+    max-width: 100px;
+}
+
+.widget_recent_posts .media-body p a{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #666566;
+}
+
+.widget_recent_posts .post-date {
+    font-size: 12px
+}
+
+.widget_recent_posts .media-left {
+    padding-right: 15px;
+}
+/* ==========
+   End of Sidebar
+   ========== */

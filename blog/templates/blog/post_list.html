@@ -2,9 +2,16 @@
 
 {% load static %}
 {% block content %}
-        
-              <div class="inner-page-banner">
+        <div class="inner-page-banner">
             <div class="container">
+               <section class="callout jumbotron text-center">
+                  <br>
+                 <br>
+                  <br>
+                  <br>
+                  <br>
+                    <h1>The BEST little rugby club in the WORLD!</h1>
+                </section>
             </div>
          </div>
          <div class="inner-information-text">
@@ -25,7 +32,7 @@
                   
                      
                   <div class="feature-post small-blog">
-                      {% for post in post_list%}
+                      {% for post in post_list %}
                      <div class="col-md-5">
                         <div class="feature-img">
                            <img src="{{ post.image.url }}" class="img-responsive" alt="#" />
@@ -53,156 +60,73 @@
                   
                         {% endfor %}
                
-               <div class="col-md-3">
+               <aside class="col-md-3">
                   <div class="blog-sidebar">
-                     <div class="search-bar-blog">
-                        <form>
-                           <input type="text" placeholder="search" />
-                           <button><i class="fa fa-search" aria-hidden="true"></i></button>
-                        </form>
-                     </div>
-                  </div>
-                  <div class="blog-sidebar">
-                     <h4 class="heading">Top Categories</h4>
-                     <div class="category-menu">
-                        <ul>
-                           <li><a href="#">Cricket</a></li>
-                           <li><a href="#">Football</a></li>
-                           <li><a href="#">Hockey</a></li>
-                           <li><a href="#">Tennis</a></li>
-                           <li><a href="#">Basketball</a></li>
-                           <li><a href="#">Golf</a></li>
-                           <li><a href="#">Cycling</a></li>
-                           <li><a href="#">Motorsports</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="blog-sidebar">
-                     <h4 class="heading">Popular News</h4>
-                     <div class="category-menu">
-                        <ul>
-                           <li>
-                              <span><img src="images/profile-img2.png" alt="#"></span>
-                              <span>
-                                 <p>Two touch penalties, imaginary cards</p>
-                                 <p class="date">22 Feb, 2016</p>
-                              </span>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-                  <aside id="sidebar" class="left-bar">
-                     <div class="feature-matchs">
-                        <div class="team-btw-match">
-                           <ul>
-                              <li>
-                                 <img src="images/img-01_002.png" alt="">
-                                 <span>Portugal</span>
-                              </li>
-                              <li class="vs"><span>vs</span></li>
-                              <li>
-                                 <img src="images/img-02.png" alt="">
-                                 <span>Germany</span>
-                              </li>
-                           </ul>
-                           <ul>
-                              <li>
-                                 <img src="images/img-03_002.png" alt="">
-                                 <span>Portugal</span>
-                              </li>
-                              <li class="vs"><span>vs</span></li>
-                              <li>
-                                 <img src="images/img-04_003.png" alt="">
-                                 <span>Germany</span>
-                              </li>
-                           </ul>
-                           <ul>
-                              <li>
-                                 <img src="images/img-05_002.png" alt="">
-                                 <span>Portugal</span>
-                              </li>
-                              <li class="vs"><span>vs</span></li>
-                              <li>
-                                 <img src="images/img-06.png" alt="">
-                                 <span>Germany</span>
-                              </li>
-                           </ul>
-                           <ul>
-                              <li>
-                                 <img src="images/img-07_002.png" alt="">
-                                 <span>Portugal</span>
-                              </li>
-                              <li class="vs"><span>vs</span></li>
-                              <li>
-                                 <img src="images/img-08.png" alt="">
-                                 <span>Germany</span>
-                              </li>
-                           </ul>
+
+                    <div class="widget widget_text">
+                        <div class="text-center">
+                            <h3 class="widget-title">Get in Touch</h3>
+                            <a href="#"><i class="fab fa-facebook fa-2x"></i></a> 
+                                <span>34.5K</span>
+                                <span>Friends</span>
+                            </a>
+                            <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
+                                <span>3.2K</span>
+                                <span>Follows</span>
+                            </a>
+                            <a href="#"></a><i class="fab fa-instagram fa-2x"></i></a>
+                                <span>15.7K</span>
+                                <span>Friends</span>
+                            </a>
                         </div>
-                     </div>
-                  </aside>
-                  <aside id="sidebar" class="left-bar">
-                     <div class="banner-sidebar">
-                        <img class="img-responsive" src="images/match-banner1.jpg" alt="#">
-                        <h3>Argentina vs Chile|Goals of the match | COPA </h3>
-                     </div>
-                  </aside>
-                  <aside id="sidebar" class="right-bar">
-                     <div class="banner">
-                        <img class="img-responsive" src="images/adds-3.jpg" alt="#">
-                     </div>
-                  </aside>
-                  <aside id="sidebar" class="left-bar">
-                     <div class="feature-matchs">
-                        <table class="table table-bordered table-hover">
-                           <thead>
-                              <tr>
-                                 <th>#</th>
-                                 <th>Team</th>
-                                 <th>P</th>
-                                 <th>W</th>
-                                 <th>L</th>
-                              </tr>
-                           </thead>
-                           <tbody>
-                              <tr>
-                                 <td>1</td>
-                                 <td><img src="images/img-01_004.png" alt="">Liverpool</td>
-                                 <td>10</td>
-                                 <td>12</td>
-                                 <td>20</td>
-                              </tr>
-                              <tr>
-                                 <td>2</td>
-                                 <td><img src="images/img-02_002.png" alt="">Chelsea</td>
-                                 <td>10</td>
-                                 <td>12</td>
-                                 <td>20</td>
-                              </tr>
-                              <tr>
-                                 <td>3</td>
-                                 <td><img src="images/img-03_003.png" alt="">Norwich City</td>
-                                 <td>20</td>
-                                 <td>15</td>
-                                 <td>20</td>
-                              </tr>
-                              <tr>
-                                 <td>4</td>
-                                 <td><img src="images/img-04_002.png" alt="">West Brom</td>
-                                 <td>60</td>
-                                 <td>10</td>
-                                 <td>60</td>
-                              </tr>
-                              <tr>
-                                 <td>5</td>
-                                 <td><img src="images/img-05.png" alt="">sunderland</td>
-                                 <td>30</td>
-                                 <td>06</td>
-                                 <td>30</td>
-                              </tr>
-                           </tbody>
-                        </table>
-                     </div>
+                    </div>
+                    <!-- Mailchimp Account Setup but needs to be activated once custom url is set for this feature to work -->
+                    <div class="widget widget_mailchimp text-center">
+                        <h3 class="widget-title">Newsletter</h3>
+                        <p>Subscribe to Newsletter to be updated.</p>
+                        <form class="signup form-inline" action="/" method="get">
+                            <div class="form-group">
+                                <input name="email" type="email" class="mailchimp_email form-control" placeholder="Email">
+                            </div>
+                            <button type="submit"><a><i class="fas fa-pen-square fa-2x"></i></a></button>
+                            <div class="response"></div>
+                        </form>
+                    </div>
+
+
+                    <div class="widget widget_banner">
+                        <div class="vertical-item content-absolute text-center">
+                            <a href="#" class="item-media">
+                                <img src="{% static 'images/blog-widget.jpg' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_tag_cloud">
+                        <h3 class="widget-title">Featured Tags</h3>
+                        {% for post in post_list%}
+                        <div class="tagcloud text-center">
+                            <a href="#" title="" class="btn-type1">{{post.tag}}</a>
+                        </div>
+                        {% endfor %} 
+                    </div>
+
+                    <div class="widget widget_archive text-center">
+                        <h3 class="widget-title">Categories</h3>
+                        <div class="select-group">
+                            <select aria-required="true" id="time" name="time">
+                                
+                                <option value="" disabled selected>Choose Category</option>
+                                {% for post in post_list%}
+                                <option value="games">{{post.category}}</option>
+                                {% endfor %} 
+                            </select>
+                            <i class="rt-icon2-chevron-thin-down"></i>
+                        </div>
+                    </div>
+ 
+                    </aside>
+
                   </aside>
                </div>
             </div>

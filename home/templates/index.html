@@ -232,46 +232,45 @@
                   </div>
            </div>
                <div id="blog" class="blog-section section-padding">
-                <div class="container">
                         <div class="col-lg-8 col-sm-8 col-xs-12">
                             <div class="main-heading sytle-2">
-                        <h2><a href="http://www.kenmarerugby.ie/blog">News</a></h2>
-                           </div>
-
-                            <div id="post_feed">
-                                <div class="row">
-                                        <div class="entry-post">
-                                          <div class="col-xs-12">
-                                          <div class="item" v-for="item in items | more showed">
-                                          <div class="entry-thumbnail">
-                                              
-                                              <div class="thumbnail-oberlay"></div>
-                                            <div class="thumb" v-thumb="item.featured_media" v-show="item.featured_media"></div>
-                                         </div>
-
-                                                <div class="post-content">
-                                                    <div class="time">
-                                                       <h2><a href="{{item.link}}" class="time">{{item.date}}</a></h2> 
-                                                    </div>
-                                                    
-                                                  
-                                                        <div class="desc">
-                                                                <h2><a href="{{item.link}}" target="_blank" class="desc">{{item.title}}</a></h2>
-                                                                 <p>{{item.excerpt}}</p>
-                                                                 <h3 class="blogMore"><a href="{{item.link}}" target="_blank" class="blogMore">Read more</a></h3>
-                                                        </div>
-                                                </div>       
-                                           </div>
-                                        </div>
+                        <h2><a href="{% url 'post_list' %}">News</a></h2>
+                    
+                  
                                     </div>
                               </div>
+                        
+               <div class="col-lg-8 col-sm-8 col-xs-12">
+                  <div class="news-post-holder">
+                     <div class="news-post-widget">
+                         {% if posts %}
+                                  {% for post in posts %}
+                                <img src="{{ post.image.url }}" class="img-responsive" alt="#" />
+                        <div class="news-post-detail">
+                           <span class="date">on {{ post.published_date}}</span>
+                           <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                           <p>{{ post.description }}</p>
+                           <div class="full">
+                                 <a class="btn" href="{% url 'post_detail' pk=post.pk %}">Read More</a>
+                              </div>
                         </div>
-                  </div>
-               </div>         
+                     </div>
+                                </div>
+                            
+                        {% endfor %}
+                {% endif %}
+                     </div>
+                </div> 
+         </div>
+         <div class="main-heading-holder">
+               <div class="main-heading sytle-2">
+                  <h2>Social Wall</h2>
+                  <p>Read the latest posts from our social media accounts</p>
+               </div>
             </div>
          </div>
            <div class="social-media-wall"  data-cfg-wallid=35477></div><script async src="https://static.socialmediawall.io/w/init-wall.js"></script> 
-   </section>                                 
+           </section>          
 
          <div class="container">
             <div class="row">
@@ -312,7 +311,7 @@
             </div>
             <div id="team-slider">
                <div class="container">
-                  <div class="col-md-6">
+                  <div class="col-md-6 text-center">
                      <div class="team-column style-2">
                         <img src="{% static 'images/conn.png' %}" alt="">
                         <div class="player-name">
@@ -334,7 +333,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 text-center">
                      <div class="team-column style-2">
                         <img src="{% static 'images/jerry.png' %}" alt="">
                          <div class="player-name">
@@ -350,5 +349,6 @@
             </div>
          </div>
       </div>
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
       {% endblock %}
       
