@@ -40,214 +40,58 @@
    <script src='https://pbutcher.uk/flipdown/js/flipdown/flipdown.js'></script>
    
    
-<style>
-    .item .thumb{
-      background-size: cover;
-      width: 750px;
-      height: 375px;
-      float: left;
-      margin-right: 10px;
-      border: 1px solid #ddd;
-      border-radius: 3px;
-      padding: 5px;
-    }
-    .entry-post .time a {
-    width: 120px;
-    height: 120px;
-    color: #fff;
-    font-size: 12px;    
-    background-color: #f4bf00;
-    line-height: 120px;
-    text-align: center;
-    border-radius: 50%;
-    display: inline-block;
-    font-weight: 700;
-    text-transform: uppercase;
-    -webkit-transition: all 900ms;
-    -moz-transition: all 900ms;
-    -ms-transition: all 900ms;
-    -o-transition: all 900ms;
-    transition: all 900ms;
-}    
 
-
-.blog-section .entry-post {
-    margin-bottom: 3px;
-    overflow: hidden;
-}
-
-.entry-thumbnail {
-    z-index: -1;
-    overflow: hidden;
-}
-
-
-
-.entry-post .time .date {
-    margin-top: 20px;
-    z-index: 1;
-    color: #ffffff;
-}
-
-
-
-.blog-section .entry-post:hover .time a {
-    border-radius: 0%;
-}
-
-.post-content .time.time1 a {
-    background-color: #f26522;
-}
-
-.post-content .time.time2 a {
-    background-color: #ed1c24;
-}
-
-.post-content .time.time3 a {
-    background-color: #b90162;
-}
-
-.post-content .time.time4 a {
-    background-color: #873e95;
-}
-
-.post-content .time.time5 a {
-    background-color: #87c05e;
-}
-
-.entry-post .time .date span {
-    display: block;
-    line-height: 0;
-    margin-top: -2px;
-    color: #ffffff;
-}
-
-.post-content {
-    border: 1px solid #f0f0f0;
-    padding-left: 35px;
-    padding-right: 35px;
-    padding-bottom: 30px;
-    font-size: 4px;
-    color: #ffffff;
-}
-
-.post-content h2 {
-    line-height: 21px;
-}
-
-.post-content h2 a  {
-    font-size: 20px;
-    color: #2d3038;
-    display: block;
-}
-
-.post-content h2 a:hover {
-    color: #87c05e;
-}
-    
-.entry-post .time {
-    margin-top: -45px;
-    z-index: 1;
-}
-    .more{margin-top:20px;}
-    
-    .example {
-  font-family: 'Roboto', sans-serif;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 510px;
-  height: 200px;;
-  margin: auto;
-}
-
-.example .flipdown {
-  font-family: sans-serif;
-  font-weight: bold;
-}
-
-.example h1 {
-  text-align: center;
-  font-weight: 100;
-  font-size: 3em;
-  margin-top: 0;
-}
-
-  </style>
    </head>
+   
 
-         <header>
-            <div class="container">
-               <div class="header-top">
-                  <div class="row">
-                     <div class="col-md-6">
-                        <div class="full">
-                           <div class="logo">
-                              <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="#" /></a>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="right_top_section">
+    <header>
+            <nav class="navbar navbar-default">
+        <div class="container-fluid alert-container hidden-xs">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="site-wide-alert alert alert-warning">
+                        <strong>Sale Now On!</strong> We've got a sale on. Get a 12 month subscription for the price of 6! <a href="">See here for more details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="#" /></a>
+                </a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                                          <li><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                                          <li><a class="nav-link" href="{% url 'teams' %}">Teams</a></li>
+                                          <li><a class="nav-link" href="{% url 'post_list' %}">Blog</a></li>
+                                          <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                                          <li><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                                       </ul>
+<div class="right_top_section">
                            <!-- social icon -->
                            <ul class="social-icons pull-left">
-                              <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
-                              <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-                              <li><a class="youtube" href="#"><i class="fab fa-youtube"></i></a></li>
-                              <li><a class="instagram" href="#"><i class="fab fa-instagram"></i></a></li>
+                              <li><a class="facebook" href="https://www.facebook.com/Kenmarerugby/"><i class="fab fa-facebook"></i></a></li>
+                              <li><a class="twitter" href="https://twitter.com/kenmarerugby"><i class="fab fa-twitter"></i></a></li>
+                              <li><a class="youtube" href="https://www.youtube.com/channel/UCAwpp2NHqjzAV55T3DABjkw"><i class="fab fa-youtube"></i></a></li>
+                              <li><a class="instagram" href="https://www.instagram.com/kenmarerugby"><i class="fab fa-instagram"></i></a></li>
                            </ul>
                            <!-- end social icon -->
                         </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="header-bottom">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <div class="full">
-                           <div class="main-menu-section">
-                              <div class="menu">
-                                 <nav class="navbar navbar-inverse">
-                                    <div class="navbar-header">
-                                       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
-                                       <span class="sr-only">Toggle navigation</span>
-                                       <span class="icon-bar"></span>
-                                       <span class="icon-bar"></span>
-                                       <span class="icon-bar"></span>
-                                       </button>
-                                       <a class="navbar-brand" href="#">Menu</a>
-                                    </div>
-                                    <div class="collapse navbar-collapse js-navbar-collapse">
-                                       <ul class="nav navbar-nav">
-                                          <li class="active"><a href="{% url 'index' %}">Home</a></li>
-                                          <li><a href="{% url 'teams' %}">Teams</a></li>
-                                          <li><a href="{% url 'post_list' %}">Blog</a></li>
-                                          <li><a href="{% url 'about' %}">About</a></li>
-                                          <li><a href="{% url 'contact' %}">Contact</a></li>
-                                       </ul>
-                                    </div>
-                                    <!-- /.nav-collapse -->
-                                 </nav>
-                                 <div class="search-bar">
-                                    <div id="imaginary_container">
-                                       <div class="input-group stylish-input-group">
-                                          <input type="text" class="form-control"  placeholder="Search" >
-                                          <span class="input-group-addon">
-                                          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>  
-                                          </span>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                
             </div>
-         </header>
+        </div>
+    </nav>
+</header>
  {% if messages %}
         <div class="alert alert-success">
             <div class="messages">
