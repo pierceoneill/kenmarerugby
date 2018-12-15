@@ -1,0 +1,102 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}     
+     
+      <div class="inner-page-banner">
+            <div class="container">
+            </div>
+         </div>
+         <div class="inner-information-text">
+            <div class="container">
+               <h3>About</h3>
+               <ul class="breadcrumb">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="active">About</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <section id="contant" class="contant main-heading" style="padding-bottom:0;margin-bottom:-1px;position:relative;z-index:1;">
+         <div class="aboutus">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                     <div class="col-md-7 col-sm-7 col-xs-12">
+                        <div class="full">
+                           <h3>Kenmare Rugby Football Club HISTORY</h3>
+                           <p>Kenmare RFC has been playing an instrumental role in the development of rugby for boys and girls in the South Kerry region since its foundation in 2009.
+                           Training is available for ages U6, 8, 10, 12 and 14 years, and all boys and girls are welcome, especially newcomers and beginners.
+The emphasis is on fitness, fun and participation, and there is no contact playing at U6-U8 level and restricted contact at U10 – U12. The full pitch game is introduced at U14 -15 levels. Player safety is vital and all coaches are at least level 2 Munster branch approved.
+
+                           </p>
+                           <ul class="icon-list">
+                              
+                              <li><i class="fa fa-angle-right"></i> The season will consist of several one day blitz competitions</li>
+                              <li><i class="fa fa-angle-right"></i> Everyone that trains will get a chance to play in all games at underage rugby.
+                              <li><i class="fa fa-angle-right"></i> Further information from Jerry O’Sullivan 083 3654625.</li>
+</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-5 col-sm-5 col-xs-12">
+                        <iframe class="img-responsive "width="600" height="300" src="https://www.youtube.com/embed/IsaKhM9jwqU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="dark-section" style="background:url(/static/images/walle.jpg)">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                     <div class="heading-main">
+                        <h2>Our Testimonials</h2>
+                     </div>
+                     <div class="testimonial-slider">
+                        <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                           <!-- Carousel Slides / Quotes -->
+                           <div class="carousel-inner text-center">
+                              <!-- Quote 1 -->
+                              <div class="item active">
+                                 <blockquote>
+                                    <div class="row">
+                                       <div class="col-sm-10 col-sm-offset-1">
+                                          <p>Thank you for your hospitality and reception during our overnight stay in July(2014).</p>
+                                          <small>Paul O'Connell (Former Munster Rugby Captain)</small>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!-- Quote 2 -->
+                              <div class="item">
+                                 <blockquote>
+                                    <div class="row">
+                                       <div class="col-sm-10 col-sm-offset-1">
+                                          <p>Thank you for the excellent coaching and time you give to my children. They love the training anc the coaches. </p>
+                                          <small>Pierce O'Neill</small>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!-- Quote 3 -->
+                              
+                           </div>
+                           <!-- Bottom Carousel Indicators -->
+                           <ol class="carousel-indicators">
+                              <li data-target="#quote-carousel" data-slide-to="0" class="active"><img class="img-responsive" src="{% static 'images/poc.jpg' %}" alt="">
+                              </li>
+                              <li data-target="#quote-carousel" data-slide-to="1"><img class="img-responsive" src="{% static 'images/pon.jpg' %}" alt="">
+                              </li>
+                              
+                           </ol>
+                           <!-- Carousel Buttons Next/Prev -->
+                           <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+                           <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+ {% endblock %}

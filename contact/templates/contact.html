@@ -1,0 +1,95 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}  
+  
+        <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_qjiZ5MfbDSigfbXPUzgTe");
+   })();
+</script>
+        
+         <div class="inner-page-banner">
+            <div class="container">
+            </div>
+         </div>
+         <div class="inner-information-text">
+            <div class="container">
+               <h3>Contact</h3>
+               <ul class="breadcrumb">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="active">Contact</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <section id="contant" class="contant main-heading team">
+         <div class="row">
+            <div class="container">
+               <div class="contact">
+                  <div class="col-md-12">
+                     <div class="map"> 
+                        <iframe width="100%" height="350" src="https://maps.google.com/maps?width=100%&amp;height=350&amp;hl=en&amp;coord=51.88410,-9.58284&amp;q=Railway%20Road%2C%20Kenmare%2C%20Co.%20Kerry+(Kenmare%20Rugby%20Football%20Club)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Google map generator</a></iframe>
+                  </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="contact-info">
+                        <div class="kode-section-title">
+                           <h3>Contact Info</h3>
+                        </div>
+                        <div class="kode-forminfo">
+                           <p>Please feel to contact us for more information on training or helping out your local rugby club..</p>
+                           <ul class="kode-form-list">
+                              <li>
+                                 <i class="fa fa-home"></i> 
+                                 <p><strong>Address:</strong>Railway Road, Kenmare, Co. Kerry</p>
+                              </li>
+                              <li>
+                                 <i class="fa fa-phone"></i> 
+                                 <p><strong>Phone:</strong> 083 365 4625</p>
+                              </li>
+                              <li>
+                                 <i class="fa fa-envelope"></i> 
+                                 <p><strong>Email:</strong> info@kenmarerugby.ie</p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="contact-us">
+                        
+                       <form id="form" onsubmit="return sendMail(this);">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="from_name" required="required" placeholder="Full Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" name="from_email" required="required" placeholder="Your email address">
+                                                </div> 
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="subject" required="required" placeholder="Subject">
+                                                </div> 
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <textarea type="text" required="required" class="form-control" name="message_html" rows="7" placeholder="Your message"></textarea>
+                                                </div>             
+                                            </div>     
+                                        </div>
+                                        <div class="form-group pull-right">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      {% endblock %}

@@ -21,12 +21,20 @@ from .settings import MEDIA_ROOT
 from django.contrib.auth import views
 from accounts import urls as urls_accounts
 from accounts import url_reset
+from blog import urls as urls_blog
+from teams import urls as urls_teams
+from contact import urls as urls_contact
+from about import urls as urls_about
 from django.contrib.auth import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^$', index, name='index'),
+    url(r'^blog/', include(urls_blog)),
+    url(r'^teams/', include(urls_teams)),
+    url(r'^contact/', include(urls_contact)),
+    url(r'^about/', include(urls_about)),
     url(r'^media/(?P<path>.*)$', static.serve,{'document_root': MEDIA_ROOT}),
      url(r'^password-reset/', include(url_reset))
 ]

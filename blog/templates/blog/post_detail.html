@@ -1,0 +1,492 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+ 
+              <div class="inner-page-banner">
+            <div class="container">
+            </div>
+         </div>
+         <div class="inner-information-text">
+            <div class="container">
+               <h3>Blog</h3>
+               <ul class="breadcrumb">
+                  <li><a href="{% url 'post_list' %}">Home</a></li>
+                  <li class="active">Blogt</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+
+<div id="blog-details" class="section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="section-title">
+                                <h1>Blog</h1>
+                            </div>
+                            <div class="entry-post">
+                                <div class="time">
+                                    <a href="#">{{ post.published_date|date:"d"}}<span>{{ post.published_date|date:"M"}}</span></a>
+                                </div>                                               
+                                <div class="post-content">
+                                    <div class="entry-title">
+                                       <h2>{{ post.title }}</h2>
+                                   </div>
+                                   <p>{{ post.description }}</p> 
+                                </div>                        
+                                <div class="entry-thumbnail">
+                                    <img class="img-responsive" src="{{ post.image.url }}" alt="Image">
+                                </div>
+                                <br>
+                                <div class="post-adds">
+                                    <a href="#" class="theme_button">
+                                        <i class="rt-icon2-arrow-forward-outline"></i>
+                                    </a>
+                                    <a href="#" class="theme_button inverse">
+                                        <i class="fa fa-tags"></i>
+                                    </a>
+                                <span class="item-likes">
+                                {{ post.tag }}
+                                </span>
+                                <span class="views-count pull-right">
+                                    <strong>{{post.views}}</strong> views
+                                </span>
+                                </div>
+                            </div> 
+                            <br>
+                            <div class="entry-summary">
+                                <p>{{ post.text|safe|linebreaksbr }}</p>
+                            </div> 
+                            <div class="author-meta">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="item-media">
+                                        <img class="blog" src="{% static 'img/sig.png' %}">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="item-content">
+                                        <h4 class="entry-title">{{ post.author }}</h4>
+                                        <p>Posts by the Pierce O'Neill admin account.</p>
+                                    <span class="author-social">
+                                        <a href="#" class="social-icon color-bg-icon rounded-icon soc-facebook"></a>
+                                        <a href="#" class="social-icon color-bg-icon rounded-icon soc-twitter"></a>
+                                        <a href="#" class="social-icon color-bg-icon rounded-icon soc-google"></a>
+                                    </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                            <div class="blog-social">
+                                <ul class="list-inline">
+                                    <li><a href="http://www.facebook.com"><img class="img-responsive" src="{% static 'img/blog/8.jpg' %}" alt="Image"></a></li>
+                                    <li><a href="http://www.twitter.com"><img class="img-responsive" src="{% static 'img/blog/9.jpg' %}" alt="Image"></a></li>
+                                    <li><a href="http://www.pinterest.com"><img class="img-responsive" src="{% static 'img/blog/10.jpg' %}" alt="Image"></a></li>
+                                    <li><a href="http://www.google+.com"><img class="img-responsive" src="{% static 'img/blog/11.jpg' %}" alt="Image"></a></li>
+                                </ul>
+                            </div><!-- blog social -->  
+
+                            <div class="post-action">
+                                <ul>
+                                    <li class="previous-post">
+                                        <span>Previous Post</span>
+                                        <h3><a href="#">Cross Browser Compatible now your hand</a></h3>
+                                    </li>
+                                    <li class="next-post">
+                                        <span>Next Post</span>
+                                        <h3><a href="#">Performance Optimization for Websites.</a></h3>
+                                    </li>
+                                </ul>
+                            </div><!-- post action -->
+{% for comment in post.comments.all %}
+                        <div class="comments-area" id="comments">
+                            <ol class="comment-list">
+                                <li class="comment even thread-even depth-1 parent">
+                                    <article class="comment-body media">
+                                        <div class="media-left">
+                                            <img class="media-object" alt="" src="images/comment-photo-1.png">
+                                        </div>
+                                        <div class="media-body with_border">
+                                    <span class="reply">
+                                        <a href="#respond">
+                                            <i class="rt-icon2-arrow-back-outline"></i>
+                                        </a>
+                                    </span>
+                                            <div class="comment-meta darklinks">
+                                                <a class="author_url" rel="external nofollow" href="#">{{ comment.author }}</a>
+                                        <span class="comment-date">
+                                            <span class="entry-date">{{ comment.created_date }}</span>
+                                        </span>
+                                            </div>
+                                         <p>{{ comment.text|safe|linebreaks }}</p> 
+                                        </div>
+                                    </article>
+                     {% endfor %}
+                     
+                     {% if user.is_authenticated %}
+                         <a class="btn btn-primary" href="{% url 'post_edit' pk=post.pk %}"><span class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></span></a>
+                         <a class="btn btn-primary" href="{% url 'post_remove' pk=post.pk %}"><span class="fa fa-trash" aria-hidden="true"></span></a>
+                     {% endif %}
+                        <hr>
+                          <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+                          
+                    </div>
+
+                    </div>
+                 </div>
+
+                    </div>
+                            <div class="contact col-sm-8 text-center">
+                                <div class="contact">
+                                    <div class="contact-info">
+                                        <div class="title">
+                                            <div class="icons">
+                                                <i class="fa fa-commenting-o" aria-hidden="true"></i> 
+                                            </div>                                
+                                            <h3>Leave me a message</h3>
+                                        </div>                            
+                                        <p>You can contact me directly by filling in your information below and I will contact you with 24 hours.</p>
+                                    </div>
+                                    <form id="form" onsubmit="return sendMail(this);">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="from_name" required="required" placeholder="Full Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" name="from_email" required="required" placeholder="Your email address">
+                                                </div> 
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="subject" required="required" placeholder="Subject">
+                                                </div> 
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <textarea type="text" required="required" class="form-control" name="project_request" rows="7" placeholder="Your message"></textarea>
+                                                </div>             
+                                            </div>     
+                                        </div>
+                                        <div class="form-group pull-right">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>                              
+                        </div>
+                        
+                    </div><!-- row -->
+                </div><!-- container -->
+            </div><!-- blog section -->
+</div>
+</div>
+<br>
+<br>
+<div class="inner-page-banner">
+            <div class="container">
+            </div>
+         </div>
+         <div class="inner-information-text">
+            <div class="container">
+               <h3>Blog</h3>
+               <ul class="breadcrumb">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="active">Blog</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <section id="contant" class="contant main-heading single-blog">
+         <div class="row">
+            <div class="container">
+               <div class="col-md-9">
+                  <div class="feature-post">
+                     <div class="feature-img">
+                        <img src="{{ post.image.url }}" class="img-responsive" alt="#" />
+                     </div>
+                     <div class="feature-cont">
+                        <div class="post-people">
+                           <div class="left-profile">
+                              <div class="post-info">
+                                 <img src="{% static 'images/logo.jpg' %}" alt="#" />
+                                 <span>
+                                    <h4>by {{ post.author }}</h4>
+                                    <h5>on {{ post.published_date}}</h5>
+                                 </span>
+                              </div>
+                              <span class="share"></span>
+                           </div>
+                        </div>
+                        <div class="post-heading">
+                           <h3>{{ post.title }}</h3>
+                           <p>{{ post.description }}
+                           </p>
+                           <p>{{ post.text|safe|linebreaksbr }}
+                           </p>
+                        </div>
+                     </div>
+                     <div class="commant-section">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           <h3>COMMENTS: (5)</h3>
+                           <div class="commant-text row">
+                              <div class="col-lg-2 col-md-2 col-sm-4 col-xs-hidden">
+                                 <div class="profile">
+                                    <img class="img-responsive" src="images/client.png" alt="#">
+                                 </div>
+                              </div>
+                              <div class="col-lg-10 col-md-10 col-sm-8 col-xs-hidden">
+                                 <h5>David</h5>
+                                 <p><span class="c_date">May 31, 2018</span> | <span><a rel="nofollow" class="comment-reply-link" href="#">Reply</a></span></p>
+                                 <p class="msg">ThisThis book is a treatise on the theory of ethics, very popular during the Renaissance. 
+                                    The first line of Lorem Ipsum, âLorem ipsum dolor sit amet..
+                                 </p>
+                              </div>
+                           </div>
+                           <div class="commant-text row">
+                              <div class="col-lg-2 col-md-2 col-sm-4 col-xs-hidden">
+                                 <div class="profile">
+                                    <img class="img-responsive" src="images/client.png" alt="#">
+                                 </div>
+                              </div>
+                              <div class="col-lg-10 col-md-10 col-sm-8 col-xs-hidden">
+                                 <h5>Jack</h5>
+                                 <p><span class="c_date">May 31, 2018</span> | <span><a rel="nofollow" class="comment-reply-link" href="#">Reply</a></span></p>
+                                 <p class="msg">Lorem ipsum dolor sit amet, consect etur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali qua. Ut enim.</p>
+                              </div>
+                              <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                              <div class="col-lg-11 col-md-11 col-sm-11">
+                                 <div class="commant-text row">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-hidden">
+                                       <div class="profile">
+                                          <img class="img-responsive" src="images/client.png" alt="#">
+                                       </div>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-hidden">
+                                       <h5>Romy</h5>
+                                       <p><span class="c_date">May 31, 2018</span> | <span><a rel="nofollow" class="comment-reply-link" href="#">Reply</a></span></p>
+                                       <p class="msg">ThisThis book is a treatise on the theory of ethics, very popular during the Renaissance. 
+                                          The first line of Lorem Ipsum, âLorem ipsum dolor sit amet..â, comes from a line in section 1.10.32.
+                                       </p>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                                 <div class="col-lg-11 col-md-11 col-sm-11">
+                                    <div class="commant-text row">
+                                       <div class="col-lg-2 col-md-2 col-sm-4 col-xs-hidden">
+                                          <div class="profile">
+                                             <img class="img-responsive" src="images/client.png" alt="#">
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-10 col-md-10 col-sm-8 col-xs-hidden">
+                                          <h5>Gerhard</h5>
+                                          <p><span class="c_date">May 31, 2018</span> | <span><a rel="nofollow" class="comment-reply-link" href="#">Reply</a></span></p>
+                                          <p class="msg">Lorem ipsum dolor sit amet, consect etur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali qua. Ut enim.</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="commant-text row">
+                              <div class="col-lg-2 col-md-2 col-sm-4 col-xs-hidden">
+                                 <div class="profile">
+                                    <img class="img-responsive" src="images/client.png" alt="#">
+                                 </div>
+                              </div>
+                              <div class="col-lg-10 col-md-10 col-sm-8 col-xs-hidden">
+                                 <h5>Gerhard</h5>
+                                 <p><span class="c_date">May 31, 2018</span> | <span><a rel="nofollow" class="comment-reply-link" href="#">Reply</a></span></p>
+                                 <p class="msg">ThisThis book is a treatise on the theory of ethics..</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="commant-section">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           <h3>Leave a comment</h3>
+                           <div class="form-command row">
+                              <form action="#" method="post" id="comments_form" class="form-horizontal1">
+                                 <div class="comment-box-field">
+                                    <p class="col-md-12 col-sm-12">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
+                                    <div class="col-lg-6">
+                                       <div class="comment-box-half"><input id="name" class="form-control1" name="author" placeholder="Name" value="" size="30" aria-required="true" type="text"></div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                       <div class="comment-box-half"><input id="subject" class="form-control2" name="email" value="" placeholder="Subject" size="30" aria-required="true" type="email"></div>
+                                    </div>
+                                    <div class=" col-sm-12 col-xs-12">
+                                       <div class="comment-box-full"><textarea id="comments" class="form-control4" placeholder="Comments" name="comment" cols="45" rows="3" aria-required="true"></textarea></div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                       <div class="comment-box-submit">
+                                          <input id="submit" value="Submit " type="submit">
+                                       </div>
+                                    </div>
+                                    <input name="comment_post_ID" value="348" id="comment_post_ID" type="hidden">
+                                    <input name="comment_parent" id="comment_parent" value="0" type="hidden">
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="feature-contant">
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="blog-sidebar">
+                     <div class="search-bar-blog">
+                        <form>
+                           <input type="text" placeholder="search" />
+                           <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                     </div>
+                  </div>
+                  <div class="blog-sidebar">
+                     <h4 class="heading">Top Categories</h4>
+                     <div class="category-menu">
+                        <ul>
+                           <li><a href="#">Cricket</a></li>
+                           <li><a href="#">Football</a></li>
+                           <li><a href="#">Hockey</a></li>
+                           <li><a href="#">Tennis</a></li>
+                           <li><a href="#">Basketball</a></li>
+                           <li><a href="#">Golf</a></li>
+                           <li><a href="#">Cycling</a></li>
+                           <li><a href="#">Motorsports</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="blog-sidebar">
+                     <h4 class="heading">Popular News</h4>
+                     <div class="category-menu">
+                        <ul>
+                           <li>
+                              <span><img src="images/profile-img2.png" alt="#"></span>
+                              <span>
+                                 <p>Two touch penalties, imaginary cards</p>
+                                 <p class="date">22 Feb, 2016</p>
+                              </span>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <aside id="sidebar" class="left-bar">
+                     <div class="feature-matchs">
+                        <div class="team-btw-match">
+                           <ul>
+                              <li>
+                                 <img src="images/img-01_002.png" alt="">
+                                 <span>Portugal</span>
+                              </li>
+                              <li class="vs"><span>vs</span></li>
+                              <li>
+                                 <img src="images/img-02.png" alt="">
+                                 <span>Germany</span>
+                              </li>
+                           </ul>
+                           <ul>
+                              <li>
+                                 <img src="images/img-03_002.png" alt="">
+                                 <span>Portugal</span>
+                              </li>
+                              <li class="vs"><span>vs</span></li>
+                              <li>
+                                 <img src="images/img-04_003.png" alt="">
+                                 <span>Germany</span>
+                              </li>
+                           </ul>
+                           <ul>
+                              <li>
+                                 <img src="images/img-05_002.png" alt="">
+                                 <span>Portugal</span>
+                              </li>
+                              <li class="vs"><span>vs</span></li>
+                              <li>
+                                 <img src="images/img-06.png" alt="">
+                                 <span>Germany</span>
+                              </li>
+                           </ul>
+                           <ul>
+                              <li>
+                                 <img src="images/img-07_002.png" alt="">
+                                 <span>Portugal</span>
+                              </li>
+                              <li class="vs"><span>vs</span></li>
+                              <li>
+                                 <img src="images/img-08.png" alt="">
+                                 <span>Germany</span>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </aside>
+                  <aside id="sidebar" class="left-bar">
+                     <div class="banner-sidebar">
+                        <img class="img-responsive" src="images/img-05.jpg" alt="#" />
+                        <h3>Lorem Ipsum is simply dummy text..</h3>
+                     </div>
+                  </aside>
+                  <aside id="sidebar" class="left-bar">
+                     <div class="feature-matchs">
+                        <table class="table table-bordered table-hover">
+                           <thead>
+                              <tr>
+                                 <th>#</th>
+                                 <th>Team</th>
+                                 <th>P</th>
+                                 <th>W</th>
+                                 <th>L</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>1</td>
+                                 <td><img src="images/img-01_004.png" alt="">Liverpool</td>
+                                 <td>10</td>
+                                 <td>12</td>
+                                 <td>20</td>
+                              </tr>
+                              <tr>
+                                 <td>2</td>
+                                 <td><img src="images/img-02_002.png" alt="">Chelsea</td>
+                                 <td>10</td>
+                                 <td>12</td>
+                                 <td>20</td>
+                              </tr>
+                              <tr>
+                                 <td>3</td>
+                                 <td><img src="images/img-03_003.png" alt="">Norwich City</td>
+                                 <td>20</td>
+                                 <td>15</td>
+                                 <td>20</td>
+                              </tr>
+                              <tr>
+                                 <td>4</td>
+                                 <td><img src="images/img-04_002.png" alt="">West Brom</td>
+                                 <td>60</td>
+                                 <td>10</td>
+                                 <td>60</td>
+                              </tr>
+                              <tr>
+                                 <td>5</td>
+                                 <td><img src="images/img-05.png" alt="">sunderland</td>
+                                 <td>30</td>
+                                 <td>06</td>
+                                 <td>30</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </aside>
+               </div>
+            </div>
+         </div>
+      </section>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+{% endblock %}

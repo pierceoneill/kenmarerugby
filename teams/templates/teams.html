@@ -1,0 +1,63 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<div class="inner-page-banner">
+            <div class="container">
+            </div>
+         </div>
+         <div class="inner-information-text">
+            <div class="container">
+               <h3>Our Teams</h3>
+               <ul class="breadcrumb">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="active">Our Teams</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <section id="contant" class="contant main-heading team">
+         <div class="row">
+            <div class="container">
+               <div class="col-md-4 column">
+                  <div class="card">
+                     <img class="img-responsive" src="{% static 'images/u6s.jpg' %}" alt="John" style="width:100%">
+                     <div class="">
+                        <h4>U-6s Team</h4>
+                        <p class="title">Mini Rugby Team</p>
+                        <p>
+                        <div class="center"><button class="button">More Info</button></div>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 column">
+                  <div class="card">
+                     <img class="img-responsive" src="{% static 'images/u8s.jpg' %}" alt="Mike" style="width:100%">
+                     <div class="">
+                        <h4>U-8s Team</h4>
+                        <p class="title">Mini Rugby Team</p>
+                        <p>
+                        <div class="center"><button class="button">More Info</button></div>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 column">
+                  <div class="card">
+                     <img class="img-responsive" src="{% static 'images/u12s.jpg' %}" alt="John" style="width:100%">
+                     <div class="">
+                        <h4>U-10s Team</h4>
+                        <p class="title">Mini Rugby Team</p>
+                        <p>
+                        <div class="center"><button class="button">More Info</button></div>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </section>
+
+      {% endblock %}

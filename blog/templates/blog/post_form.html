@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% block content %}
+ 
+              <div class="inner-page-banner">
+            <div class="container">
+            </div>
+         </div>
+         <div class="inner-information-text">
+            <div class="container">
+               <h3>Blog</h3>
+               <ul class="breadcrumb">
+                  <li><a href="{% url 'post_list' %}">Home</a></li>
+                  <li class="active">Blogt</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+        
+        <body>
+
+     <!--Page Header -->
+    <header class="masthead" style="background-image: url('/media/img/host/background.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Project Submission</h1>
+              <span class="subheading">Submit your suggestions for future projects.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  
+    <!--Displays any messages, if there are any-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if messages %}
+            <div class="messages-box">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      
+      <!--Generates form to allow users to submit posts-->
+      <div class="row">
+        <div class="col-12">
+          <span class="text-center">
+            <h1>Project Sugestion</h1>
+          </span>
+          <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form | as_bootstrap }}
+              <button type="submit" class="btn btn-info custom-btn">Save</button>
+          </form>
+        </div>
+      </div>
+    
+  </body>
+
+    <form method="POST" class="post-form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+
+    <script>var editor = new MediumEditor('.editable');</script>
+
+{% endblock %}
