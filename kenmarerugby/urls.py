@@ -16,7 +16,6 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from home.views import index
-from django.views import static
 from .settings import MEDIA_ROOT
 from django.contrib.auth import views
 from accounts import urls as urls_accounts
@@ -26,6 +25,7 @@ from teams import urls as urls_teams
 from contact import urls as urls_contact
 from about import urls as urls_about
 from django.contrib.auth import views
+from django.views import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
